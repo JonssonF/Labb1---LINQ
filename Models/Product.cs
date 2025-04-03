@@ -21,5 +21,11 @@ namespace Labb1___LINQ.Models
 
         [Required]
         public int SupplierId { get; set; }
+
+        //Navigation Propertys
+        public Category Category { get; set; } = null!;
+
+        public Supplier Supplier { get; set; } = null!;
+
     }
 }

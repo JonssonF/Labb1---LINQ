@@ -12,6 +12,7 @@
 
         public OrderStatus Status { get; set; }
 
+        //Navigational Propertys
         public ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
     }
 

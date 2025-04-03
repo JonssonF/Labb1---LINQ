@@ -12,9 +12,9 @@ namespace Labb1___LINQ.Models
 
         [MaxLength(500)]
         public string? Description { get; set; } = string.Empty;
-    
-        
-        public ICollection<Order> Orders { get; set; } = new List<Order>();
+
+        //Navigational Propertys
+        public ICollection<Product> Products { get; set; } = new List<Product>();
     
     }
 }

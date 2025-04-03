@@ -17,6 +17,7 @@ namespace Labb1___LINQ.Models
         [MaxLength(500)]
         public string? Adress { get; set; }
 
+        //Navigational Propertys
         public ICollection<Order> Orders { get; set; } = new List<Order>();
 
     }
