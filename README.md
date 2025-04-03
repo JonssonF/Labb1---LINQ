@@ -32,4 +32,4 @@ The following entities have been created as part of the project:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/e-commerce-linq.git
+   git clone https://github.com/JonssonF/Labb1---LINQ.git
