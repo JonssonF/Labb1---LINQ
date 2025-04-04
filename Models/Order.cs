@@ -18,7 +18,7 @@
 
     public enum OrderStatus
     {
-        Processing = 0,
+        Processing,
         Shipped,
         Delivered,
     }
