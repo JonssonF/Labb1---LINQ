@@ -1,10 +1,12 @@
-﻿namespace Labb1___LINQ
+﻿using Labb1___LINQ.Controller;
+
+namespace Labb1___LINQ
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Menu.Run();
         }
     }
 }
