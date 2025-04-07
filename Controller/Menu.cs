@@ -39,7 +39,10 @@ namespace Labb1___LINQ.Controller
                 switch (choice)
                 {
                     case 1:
-                        //Functions.ShowAllOrders();
+                        Console.Clear();
+                        Console.WriteLine("Displays all products in category Electronics, price decending.");
+                        MenuService.ShowElectronics();
+                        Console.ReadLine();
                         break;
                     case 2:
                         //Functions.ShowAllProducts();
