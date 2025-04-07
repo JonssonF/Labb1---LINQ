@@ -4,9 +4,6 @@ namespace Labb1___LINQ.Controller
 {
     public class Menu
     {
-        public Menu()
-        { }
-
         // Method to run the menu
         public static void Run()
         {
@@ -22,11 +19,12 @@ namespace Labb1___LINQ.Controller
             Console.Clear();
         }
 
+        // Method to display the menu options
         public static void ShowMenu()
         {
             Console.Clear();
             Console.WriteLine("Welcome to the LINQ application!\n\n");
-            Console.WriteLine("1. Show Electronic category");
+            Console.WriteLine("1. Show Electronics category");
             Console.WriteLine("2. Show Supplier product quantity below 10");
             Console.WriteLine("3. Total ordervalue of last month");
             Console.WriteLine("4. Top 3 sold items");
@@ -43,7 +41,6 @@ namespace Labb1___LINQ.Controller
                 switch (choice)
                 {
                     case 1:
-
                         MenuService.ShowElectronics();
                         Console.WriteLine("Press any key to continue...");
                         Console.ReadLine();

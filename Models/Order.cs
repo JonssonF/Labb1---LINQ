@@ -15,6 +15,9 @@
 
         // Navigation property: one order can have multiple order details (products)
         public ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
+
+        // Navigation property: the related customer who placed the order
+        public Customer Customer { get; set; } = null!;
     }
     // Enum representing possible statuses for an order
     public enum OrderStatus
