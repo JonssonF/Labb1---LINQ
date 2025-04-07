@@ -13,7 +13,7 @@ namespace Labb1___LINQ.Models
         [MaxLength(500)]
         public string? Description { get; set; } = string.Empty;
 
-        //Navigational Propertys
+        // Navigation property: one category can be linked to many products
         public ICollection<Product> Products { get; set; } = new List<Product>();
     
     }

@@ -17,6 +17,7 @@ namespace Labb1___LINQ.Models
 
         public string? Phone { get; set; } = string.Empty;
 
-        public ICollection<Supplier> Suppliers { get; set; } = new List<Supplier>();
+        //Navigation property: one Supplier can be linked to many products
+        public ICollection<Product> Products { get; set; } = new List<Product>();
     }
 }

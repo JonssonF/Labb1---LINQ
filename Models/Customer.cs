@@ -20,7 +20,7 @@ namespace Labb1___LINQ.Models
         [MaxLength(500)]
         public string? Adress { get; set; }
 
-        //Navigational Propertys
+        // Navigation property: one Customer can be linked to many orders
         public ICollection<Order> Orders { get; set; } = new List<Order>();
 
     }

@@ -1,6 +1,6 @@
 ﻿namespace Labb1___LINQ.Controller
 {
-    public class Functions
+    public class MenuService
     {
 
 

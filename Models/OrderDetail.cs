@@ -13,9 +13,10 @@
 
         public decimal UnitPrice { get; set; }
 
-        //Navigational Property
+        // Navigation property: the related product to the order details
         public Product Product { get; set; } = null!;
 
+        // Navigation property: the related order to the order details
         public Order Order { get; set; } = null!;
 
 

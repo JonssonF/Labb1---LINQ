@@ -7,10 +7,12 @@ namespace Labb1___LINQ.Controller
         public Menu()
         { }
 
-
+        // Method to run the menu
         public static void Run()
         {
+            // Display the menu
             ShowMenu();
+            // Call the method to handle menu options
             MenuOptions();
             Console.WriteLine("\n\nThanks for watching!");
             Console.WriteLine("Press any key to continue...");
@@ -28,7 +30,7 @@ namespace Labb1___LINQ.Controller
             Console.WriteLine("4. Show all order details");
             Console.WriteLine("5. Exit");
         }
-
+        // Method to handle menu options
         public static void MenuOptions()
         {
             int choice = GetChoice();
@@ -57,6 +59,7 @@ namespace Labb1___LINQ.Controller
             }
         }
 
+        // Method to get user input for menu choice
         public static int GetChoice()
         {
             Console.Write("Please enter your choice: ");

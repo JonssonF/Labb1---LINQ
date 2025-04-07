@@ -14,17 +14,20 @@ namespace Labb1___LINQ.Models
 
         public decimal Price { get; set; }
 
+        public int StockQuantity { get; set; }
+
+        // Foreign key referencing the product's category
         [Required]
         public int CategoryId { get; set; }
 
-        public int StockQuantity { get; set; }
-
+        // Foreign key referencing the product's supplier
         [Required]
         public int SupplierId { get; set; }
 
-        //Navigation Propertys
+        // Navigation property: the category this product belongs to
         public Category Category { get; set; } = null!;
 
+        // Navigation property: the supplier providing this product
         public Supplier Supplier { get; set; } = null!;
 
     }
