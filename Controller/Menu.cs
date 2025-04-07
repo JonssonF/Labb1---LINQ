@@ -14,6 +14,8 @@ namespace Labb1___LINQ.Controller
             ShowMenu();
             // Call the method to handle menu options
             MenuOptions();
+
+            //Jumps here when while loop is exited
             Console.WriteLine("\n\nThanks for watching!");
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
@@ -23,35 +25,53 @@ namespace Labb1___LINQ.Controller
         public static void ShowMenu()
         {
             Console.Clear();
-            Console.WriteLine("Welcome to the LINQ application!");
-            Console.WriteLine("1. Show all orders");
-            Console.WriteLine("2. Show all products");
-            Console.WriteLine("3. Show all customers");
-            Console.WriteLine("4. Show all order details");
-            Console.WriteLine("5. Exit");
+            Console.WriteLine("Welcome to the LINQ application!\n\n");
+            Console.WriteLine("1. Show Electronic category");
+            Console.WriteLine("2. Show Supplier product quantity below 10");
+            Console.WriteLine("3. Total ordervalue of last month");
+            Console.WriteLine("4. Top 3 sold items");
+            Console.WriteLine("5. List products by category");
+            Console.WriteLine("6. Flex the bigspenders with big bills");
+            Console.WriteLine("7. Exit\n");
         }
         // Method to handle menu options
         public static void MenuOptions()
         {
             int choice = GetChoice();
-            while (choice != 5)
+            while (choice != 7)
             {
                 switch (choice)
                 {
                     case 1:
-                        Console.Clear();
-                        Console.WriteLine("Displays all products in category Electronics, price decending.");
+
                         MenuService.ShowElectronics();
+                        Console.WriteLine("Press any key to continue...");
                         Console.ReadLine();
                         break;
                     case 2:
-                        //Functions.ShowAllProducts();
+                        MenuService.ShowSuppliers();
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadLine();
                         break;
                     case 3:
-                        //Functions.ShowAllCustomers();
+                        MenuService.MonthlyOrders();
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadLine();
                         break;
                     case 4:
-                        //Functions.ShowAllOrderDetails();
+                        MenuService.TopProducts();
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadLine();
+                        break;
+                    case 5:
+                        MenuService.CategoriesAndProducts();
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadLine();
+                        break;
+                    case 6:
+                        MenuService.BigSpenders();
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadLine();
                         break;
                     default:
                         Console.WriteLine("Invalid choice, please try again.");
@@ -73,7 +93,7 @@ namespace Labb1___LINQ.Controller
             }
             else
             {
-                Console.WriteLine("Invalid input, please enter a number between 1-5.");
+                Console.WriteLine("Invalid input, please enter a number between 1-7.");
                 return GetChoice();
             }
         }
