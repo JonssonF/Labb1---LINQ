@@ -66,19 +66,30 @@ namespace Labb1___LINQ.Controller
         //Displays the total order amount and value for the last month
         public static void MonthlyOrders()
         {
-            var lastMonth = DateTime.Now.AddMonths(-1);
-            CurrentMonth month = (CurrentMonth)lastMonth.Month;
+            // Get the current date and subtract one month to get the target date
+            DateTime targetDate = DateTime.Now.AddMonths(-1);
+            DateTime dateTime = DateTime.Now;
+            
+            CurrentMonth startMonth = (CurrentMonth)targetDate.Month;
+            CurrentMonth endMonth = (CurrentMonth)dateTime.Month;
+
+            // Ternary operator to check if the start and end month are the same
+            // If they cross over 2 months, it will display the start and end month
+            string monthSplit = startMonth == endMonth 
+                ? $"in {startMonth} ({targetDate:dd}-{dateTime:dd})"
+                : $"from {startMonth} ({targetDate:dd}) / {endMonth} ({dateTime:dd})";
+
             Console.Clear();
-            Console.WriteLine($"Here is the summary of orders made in: {month}\n\n");
-            Console.WriteLine("----------------------------------------------------------");
+            Console.WriteLine($"Here is the summary of orders made {monthSplit}\n");
+            Console.WriteLine("------------------------------------------------------------------");
             using (var context = new EShopContext())
             {
                 var totalOrderValue = context.Orders
-                    .Where(o => o.OrderDate >= lastMonth)
+                    .Where(o => o.OrderDate >= targetDate)
                     .Sum(o => o.OrderDetails.Sum(od => od.Quantity * od.Product.Price));
-                Console.WriteLine($"Total amount of orders {totalOrderValue.ToString().Count()}");
-                Console.WriteLine($"Total order value for the last month: {totalOrderValue:C}");
-                Console.WriteLine("----------------------------------------------------------");
+                Console.WriteLine($"Total amount of orders: {totalOrderValue.ToString().Count()}");
+                Console.WriteLine($"Total order value: {totalOrderValue:C}");
+                Console.WriteLine("------------------------------------------------------------------");
             }
         }
 
